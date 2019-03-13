@@ -20,7 +20,7 @@
 # *for more optional arguments see manual
 
 cd /ssd/common/proj/ProteomicsCyano/
-python3 Resources/pipelines/complete_pipeline_Vital/run_diffacto.py -peptide='MS_analysis/20181204/DemixQ/peptides_DeMixQ.csv' -db='Resources/databases/Ralstonia/UP000008210_381666_UNIPROT_20190107_CRAP_DECOY.fasta' -samples='MS_analysis/20181204/DemixQ/samples.csv' -ref=False -out='MS_analysis/20181204/Diffacto/peptides_DeMixQ_Diffacto.tsv' -out_type='peptide'
+python3 Resources/pipelines/diffacto-master/run_diffacto_custom.py -peptide='MS_analysis/20181204/DemixQ/peptides_DeMixQ.csv' -db='Resources/databases/Ralstonia/UP000008210_381666_UNIPROT_20190107_CRAP_DECOY.fasta' -samples='MS_analysis/20181204/DemixQ/samples.csv' -ref=False -out='MS_analysis/20181204/Diffacto/peptides_DeMixQ_Diffacto.tsv' -out_type='peptide'
 
 
 # POST PROCESSING
@@ -29,4 +29,4 @@ python3 Resources/pipelines/complete_pipeline_Vital/run_diffacto.py -peptide='MS
 # peptides can be aggregated to proteins with an custom R script that uses the weight as filter or optionally
 # to calculate weighted mean or sum of peptides. The script can be found under
 
-/home/michael/Documents/SciLifeLab/Resources/R_scripts/MS_importDiffacto.R
+https://github.com/m-jahn/R-tools/blob/master/MS_importDiffacto.R
