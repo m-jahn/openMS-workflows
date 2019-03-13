@@ -1,0 +1,32 @@
+# BASH COMMANDS TO RUN DEMIX-Q
+#
+# LIBRARIES
+# 
+# requires some external python libraries:
+# -numpy, scipy, pandas, sklearn, networkx, scikit-learn
+#
+#
+# RUNNING DIFFACTO
+#
+# Diffacto applies factor analysis to MS quantified peptides and rules out peptides by low covariation score
+# Quantification is additionally based on covariation weights. Vital custom version returns also peptide and not just protein output
+#
+# PARAMETERS
+# -i		peptide quantification file, csv table with first column peptides sequences
+# -db		Protein database in FASTA format
+# -samples	File of the sample list. One run and its sample group per line, separated by tab.
+# -out		Path to output file (writing in TSV format)
+# -out_type     Either 'peptide' or 'proteins' (the default)
+# *for more optional arguments see manual
+
+cd /ssd/common/proj/ProteomicsCyano/
+python3 Resources/pipelines/complete_pipeline_Vital/run_diffacto.py -peptide='MS_analysis/20181204/DemixQ/peptides_DeMixQ.csv' -db='Resources/databases/Ralstonia/UP000008210_381666_UNIPROT_20190107_CRAP_DECOY.fasta' -samples='MS_analysis/20181204/DemixQ/samples.csv' -ref=False -out='MS_analysis/20181204/Diffacto/peptides_DeMixQ_Diffacto.tsv' -out_type='peptide'
+
+
+# POST PROCESSING
+#
+# Diffacto returns optionally a list of peptide quantifications and weights
+# peptides can be aggregated to proteins with an custom R script that uses the weight as filter or optionally
+# to calculate weighted mean or sum of peptides. The script can be found under
+
+/home/michael/Documents/SciLifeLab/Resources/R_scripts/MS_importDiffacto.R

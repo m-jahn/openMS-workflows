@@ -1,0 +1,51 @@
+# BASH COMMANDS TO RUN DEMIX-Q
+#
+# LIBRARIES
+# 
+# requires some external python libraries:
+# -numpy, scipy, pandas, sklearn
+# -pandas required newer version 0.22.0, that was downloaded using pip install pandas==0.22.0
+# -pymzml
+#
+#
+# 1. CONSENSUS TO EDTA
+#
+# This script adds decoy values to the consensus features
+# to allow for FDR calculation after MS1 feature propagation
+#
+# PARAMETERS
+
+# -converter_script	path to converter script
+# -in			consensus feature list from TextExporter (*.csv)
+# -decoy_mz_shift	m/z shift (PPM) for generating decoy features with 1 PPM random noise (default 50)
+# -decoy_RT_shift	RT shift (seconds) for generating decoy features with 5 second random noise (default 300)
+# -out			output file in mgf format (*.edta)
+
+cd /ssd/common/proj/ProteomicsCyano/
+python Resources/pipelines/DeMix-Q-master/scripts/consensus2edta.py MS_analysis/20181204/FeatureLinkerUnlabeledQT/20181218_FA_005_R1_0.csv 50 300 MS_analysis/20181204/FeatureLinkerUnlabeledQT/
+
+
+# 2. DEMIX-Q DATA PROCESSING
+#
+# This script merges the consensus table and the the extracted features from
+# EICExtractor and applies statistical validation by using the FDR
+# It also corrects m/z shift over multiple runs using K means clustering but
+# this option is best to be avoided (can introduce noise)
+# IMPORTANT: sometimes it can be necessary to manually rename the 'MAP' header in the 
+# consensus.csv to the original runs names. If there are repetitive 'UNKNOWN' tags
+# demix-Q will produce this 'ValueError: cannot reindex from a duplicate axis'
+#
+# PARAMETERS
+#
+# -consensus		Path to the consensus feature map (default: consensus.csv)
+# -eic			The extracted ion-chromatogramms from EICExtractor (default: eic.csv)
+# -n_samples		number of samples (default: 4)
+# -n_repeats		number of replicate experiments per sample (default: 3)
+# -fdr			Quality cutoff by estimating FDR from decoy extractions (default: 0.05)
+# -knn_k		K nearest neighbors for abundance correction, set 0 to disable correction (default: 5)
+# -knn_step		Number of sequential features used for estimating local medians (default: 500)
+# -out			Output table in csv format (default: peptides.DeMixQ.csv)
+
+cd /ssd/common/proj/ProteomicsCyano/
+python Resources/pipelines/DeMix-Q-master/scripts/DeMixQ_data_processing_Vital.py -consensus MS_analysis/20181204/FeatureLinkerUnlabeledQT/20181218_FA_005_R1_0.csv -eic MS_analysis/20181204/EICExtractor/EICExtractor.csv -n_samples 20 -n_repeats 4 -fdr 0.05 -knn_k 0 -out MS_analysis/20181204/DemixQ/peptides_DeMixQ_noKNN.csv
+
