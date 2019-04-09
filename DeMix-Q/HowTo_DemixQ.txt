@@ -33,7 +33,7 @@ python Resources/pipelines/DeMix-Q-master/scripts/consensus2edta.py MS_analysis/
 # this option is best to be avoided (can introduce noise)
 # IMPORTANT: sometimes it can be necessary to manually rename the 'MAP' header in the 
 # consensus.csv to the original runs names. If there are repetitive 'UNKNOWN' tags
-# demix-Q will produce this 'ValueError: cannot reindex from a duplicate axis'
+# demix-Q will produce a 'ValueError: cannot reindex from a duplicate axis'
 #
 # PARAMETERS
 #
