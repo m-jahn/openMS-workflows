@@ -2,7 +2,7 @@
 
 Workflow for TMT10 labeled DDA MS samples, using MSGF+, Percolator, and IsobaricAnalyzer
 
-<img src="workflow.png" width="550px" style="display: block; margin: auto;" />
+<img src="workflow.png" style="display: block; margin: auto;" />
 
 ### Version
 
