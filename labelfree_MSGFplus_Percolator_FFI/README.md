@@ -3,7 +3,7 @@
 Workflow for labelfree quantification of DDA MS samples, using MSGF+, Percolator and FeatureFinderIdentification
 Based on the publication by [Weisser et al., 2017](https://pubs.acs.org/doi/abs/10.1021/acs.jproteome.7b00248)
 
-<img src="workflow.png" width="550px" style="display: block; margin: auto;" />
+<img src="workflow.png" style="display: block; margin: auto;" />
 
 ### Version
 

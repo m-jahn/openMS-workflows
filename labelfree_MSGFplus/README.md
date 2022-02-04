@@ -2,7 +2,7 @@
 
 Workflow for labelfree quantification of DDA MS samples, using MSGF+, DemixQ and Diffacto
 
-<img src="workflow.png" width="550px" style="display: block; margin: auto;" />
+<img src="workflow.png" style="display: block; margin: auto;" />
 
 ### Version
 
