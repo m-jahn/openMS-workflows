@@ -2,7 +2,7 @@
 
 Workflows for openMS using KNIME framework
 
-<img src="examples/workflow.png" width="550px" style="display: block; margin: auto;" />
+<img src="examples/workflow.png" style="display: block; margin: auto;" />
 
 ### Introduction
 
@@ -12,9 +12,9 @@ All workflows are intended for protein MS samples obtained in data-dependent acq
 
 ### Content
 
-- `TMT_label_MSGFplus` - workflow for TMT10 labeled DDA MS samples, using MSGF+, Percolator, and IsobaricAnalyzer (KNIME v4.5.0, *maintained*)
-- `labelfree_MSGFplus_Percolator_FFI` - workflow for labelfree quantification of DDA MS samples, using MSGF+, Percolator and FeatureFinderIdentification (KNIME v4.5.0, *maintained*)
-- `labelfree_MSGFplus` - workflow for labelfree quantification of DDA MS samples, using MSGF+, DemixQ and Diffacto (KNIME v4.5.0, *not maintained*)
+- `TMT_label_MSGFplus` - workflow for TMT10 labeled DDA MS samples, using MSGF+, Percolator, and IsobaricAnalyzer (KNIME v4.5.0, maintained)
+- `labelfree_MSGFplus_Percolator_FFI` - workflow for labelfree quantification of DDA MS samples, using MSGF+, Percolator and FeatureFinderIdentification (KNIME v4.5.0, maintained)
+- `labelfree_MSGFplus` - workflow for labelfree quantification of DDA MS samples, using MSGF+, DemixQ and Diffacto (KNIME v3.6.2, *not maintained*)
 - `examples` - contains an example workflow for parallel processing (KNIME v3.1.0, *not maintained*)
 
 
@@ -26,7 +26,7 @@ All workflows are intended for protein MS samples obtained in data-dependent acq
 ### Installation
 
 - Download and install KNIME/openMS according to http://www.openms.de/getting-started/creating-workflows/
-- Download the recent MS-GF+ search engine JAVA executable (most likely already contained in openMS' MSGFPlus Adapter)
+- Download the recent MS-GF+ search engine JAVA executable (most likely already contained in openMS' MSGFPlusAdapter)
 - Download scripts for DemixQ (https://github.com/userbz/DeMix-Q) and Diffacto (https://github.com/statisticalbiotechnology/diffacto) algorithms (optional data processing)
 
 ### Workflow details
