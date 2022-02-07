@@ -1,6 +1,8 @@
 # TMT_label_MSGFplus
 
-Workflow for TMT10 labeled DDA MS samples, using MSGF+, Percolator, and IsobaricAnalyzer
+Workflow for TMT10 labeled DDA MS samples, using MSGF+, Percolator, and IsobaricAnalyzer.
+
+----------
 
 <img src="workflow.png" style="display: block; margin: auto;" />
 

@@ -1,6 +1,8 @@
 # labelfree_MSGFplus
 
-Workflow for labelfree quantification of DDA MS samples, using MSGF+, DemixQ and Diffacto
+Workflow for labelfree quantification of DDA MS samples, using MSGF+, DemixQ and Diffacto.
+
+----------
 
 <img src="workflow.png" style="display: block; margin: auto;" />
 
